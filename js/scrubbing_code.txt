@@ -1,0 +1,38 @@
+var map = {
+	controller : "-24px -458px",
+	nursingstation: "53px -162px",
+	bc: "533px -474px",
+	bhu: "617px -365px",
+	hh: "753px -148px",
+	bathroom: "1040px -178px"
+}
+
+$('.headingbox').mouseenter(function(e) {
+        var title = $(this).attr('title'); // Get the title attribute of the hovered element
+		var cssproperty = map[title];
+		console.log(cssproperty);
+        
+       
+    });
+
+
+
+
+	 //if (map.hasOwnProperty(title)) { // Check if the title attribute matches a key in the map object
+			//var translateproperty = (map[title]);
+			//$('.target').css('translate', translateproperty).fadeIn();
+        //}
+	//$('.headingbox').mouseleave(function() {
+     //   $('.target').fadeOut();
+	//	$('.target').css('display')
+    });
+    var $root = $('html, body');
+    $('a[href^="#"]').click(function() {
+        var href = $.attr(this, 'href');
+        $root.animate({
+            scrollTop: $(href).offset().top
+        }, 500, function () {
+            window.location.hash = href;
+        });
+        return false;
+    });
